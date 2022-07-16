@@ -1,0 +1,1 @@
+select (receive - send)*POW(0.1,8) balance from (select sum(value) receive from transactions where is_send = 0 and 0 < confirmations) inner join (select sum(value) send from transactions where is_send = 1);
